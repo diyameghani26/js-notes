@@ -200,3 +200,16 @@ This can lead to memory leaks and slow performance if we don’t remove unused l
 
 That’s why we use removeEventListener to remove the event and allow garbage collection to free memory.
 
+<!-- Event loops & Callback queue -->
+
+event loop has only one work to monitor the call stack and the callback queue. so when it sees that callstack is empty it checks in call back queue it takes the function waiting their to the call stack and from their its quickly executed.
+
+The callback queue or(tasks queue) is a waiting line where callback functions from asynchronous tasks (like setTimeout, API calls, or events) are stored. Since JavaScript can do only one thing at a time, these callbacks wait in the queue until the call stack becomes empty, and then JavaScript executes them
+
+<!-- microtask queue  -->
+
+The microtask queue is a special, high-priority queue where callbacks from Promises (like .then() and .catch()) are stored. These tasks are executed before the normal callback queue as soon as the call stack becomes empty, so they run faster than other async callbacks.
+(promises and mutation observer)
+
+-->> starvation of the functions in callback queue -  Callbacks in the normal callback queue don’t get a chance to run because the microtask queue (Promises) keeps getting executed again and again.
+
