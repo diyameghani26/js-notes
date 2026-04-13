@@ -224,3 +224,34 @@ callbacks are superpowerfull way of  handeling async operatins in javascript . i
 1. callback hell : the callback inside callback a lott of nested callbacks. the code becomes unmaintainable
 2. inversion of control : that we loose the control of our program bcoz we pass the callback fnc  into another fnc and now we have given the control of our function to some other function . and now we dont know that whether that function will ever execute our callback or not so this is another big isssue with callback
 
+<!-- event bubbling and capturing/tricking -->
+
+1. bubbling means goes upward to the hirerachy of dom.
+2. capturing/trickling means goint downward.
+
+eg. if you have three div one inside another 
+
+grandparent -> parent -> child 
+
+so in bubbling case if you do onclick on child child will be called then onclick parent and then onclick grandparent  and opposite toh this is event capturing it goes downward fist grandparent then parent and then child 
+
+and to stop this use e.stopPropogation();
+
+//code ->
+
+document.querySelector("#grandparent")
+.addEventListener('click, ()=>{
+    console.log("grandparent clicked )
+}, true) (true means capturing)
+
+document.querySelector("#parent")
+.addEventListener('click, ()=>{
+    console.log("parent clicked )
+}, false) (false meand bubbling)
+
+document.querySelector("#child")
+.addEventListener('click, ()=>{
+    console.log("child clicked )
+    e.stopPropogation()
+}, false) (false meand bubbling)
+
