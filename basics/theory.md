@@ -213,3 +213,14 @@ The microtask queue is a special, high-priority queue where callbacks from Promi
 
 -->> starvation of the functions in callback queue -  Callbacks in the normal callback queue don’t get a chance to run because the microtask queue (Promises) keeps getting executed again and again.
 
+
+
+<!-- callback hell -->
+
+callbacks are superpowerfull way of  handeling async operatins in javascript . infact asychronous js exist because callback exists.
+
+-> while we are writing call back we face many issues-
+
+1. callback hell : the callback inside callback a lott of nested callbacks. the code becomes unmaintainable
+2. inversion of control : that we loose the control of our program bcoz we pass the callback fnc  into another fnc and now we have given the control of our function to some other function . and now we dont know that whether that function will ever execute our callback or not so this is another big isssue with callback
+
