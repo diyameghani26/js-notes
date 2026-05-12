@@ -255,3 +255,21 @@ document.querySelector("#child")
     e.stopPropogation()
 }, false) (false meand bubbling)
 
+
+<!-- promises -->
+
+some people call this promise object as a placeholder , which will be filled later with a value
+  or promise is a placeholder for a certain period of time until we recieve a value from a asynchronous operation 
+  or container for a future value .
+
+according to mdn doc-
+
+promise is an object representing an eventual completion of  an asynchronous operation.
+
+
+there is an major issue  in handling async code with callbacks that is inversion of control .  we ere passing a fnc inside another api and we have given our control in some other api which we wanted to avoid that was inversion of control and how it was solved is - we basically had a promise object and that object will be eventually filled with a result of async operation  (promise obj)  and we dont pass a fnc inside any other fnc  but what we do is we attach a callback fnc to that promise obj and whenever we have data inside it or whenever the promise is resolved   that callback fnc automatically called by promises
+
+promise gives us guarantee and trust  in out whole transaction bcoz 
+ 1 - use can resolve promise just once 
+ 2 - you have 3 states - pending , fullfill or rejected  no other state .
+ 3 - you can pass promise where ever u want to  without caring about the mutability of it . it is IMMUTABLE you cannot alter if it is resolved .
