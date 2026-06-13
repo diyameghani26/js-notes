@@ -60,6 +60,7 @@ or
 
 Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their scope during the creation phase, before the code executes.
 
+
  <!--ep-4  -->
 
  whenever you create a global object a this is created  even for the functional execution context and for thr global execution context.
@@ -115,9 +116,13 @@ If there is let a = 10 outside and inside a block you write let a = 20, then ins
 but it should not cross the boundary of scope that is we can shadow var variable using let but not the vice versa.
  but if we do it will be known as illegal shadowing and will give that variable is it already defined.
 
+
+
  <!-- declaration -->
 
- let and const cannot be redeclared in the same scope but var can be.
+var decalaraions are hoised but initialized as undefined 
+
+let and const cannot be redeclared in the same scope but var can be.
 
 <!-- initialization -->
  var and let can be declared without the initialization but const cannot.
